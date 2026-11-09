@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Telegraf';
+  src: url('/media/fonts/Telegraf-UltraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Telegraf';
+  src: url('/media/fonts/Telegraf-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Telegraf';
+  src: url('/media/fonts/Telegraf-UltraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --navy: #1b2c58;
+  --navy-deep: #0b1730;
+  --navy-ink: #07101f;
+  --gold: #bd9346;
+  --gold-bright: #d8b477;
+  --gold-pale: #ead8b7;
+  --blue-grey: #8fa0b6;
+  --ink: #111a2c;
+  --slate: #4b5871;
+  --muted: #728097;
+  --cream: #f4f2ec;
+  --cream-deep: #eae6dc;
+  --paper: #fbfaf7;
+  --white: #ffffff;
+  --line: rgba(27, 44, 88, 0.14);
+  --line-light: rgba(255, 255, 255, 0.18);
+  --danger: #a7382f;
+
+  --font-display: 'Telegraf', 'Poppins', sans-serif;
+  --font-body: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+
+  --container: 1380px;
+  --gutter: clamp(1.25rem, 4.2vw, 4.5rem);
+  --section-y: clamp(5rem, 9vw, 9.5rem);
+  --header-height: 86px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --shadow-soft: 0 24px 60px rgba(7, 16, 31, 0.1);
+  --shadow-deep: 0 40px 100px rgba(7, 16, 31, 0.24);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 34px;
+
+  /* Cinematic glass system */
+  --glass-dark: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035));
+  --glass-dark-strong: linear-gradient(145deg, rgba(14, 27, 52, 0.82), rgba(7, 16, 31, 0.58));
+  --glass-light: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.48));
+  --glass-line: rgba(255, 255, 255, 0.17);
+  --glass-line-light: rgba(27, 44, 88, 0.13);
+  --glass-blur: blur(24px) saturate(145%);
+  --glass-shadow: 0 28px 80px rgba(3, 9, 20, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --glass-shadow-light: 0 24px 70px rgba(7, 16, 31, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --glow-gold: 0 0 80px rgba(189, 147, 70, 0.2);
+  --duration-fast: 180ms;
+  --duration-base: 280ms;
+  --duration-slow: 520ms;
+  --duration-cinematic: 900ms;
+  --ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --z-header: 100;
+  --z-menu: 200;
+  --z-progress: 300;
+  --z-preloader: 500;
+}
