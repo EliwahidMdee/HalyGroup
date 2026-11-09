@@ -1088,19 +1088,20 @@
 
 .logo-wall__item {
   display: grid;
-  min-height: 132px;
+  min-height: 176px;
   place-items: center;
-  padding: 1.8rem;
+  padding: 1.4rem;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .logo-wall__item img {
-  max-width: 148px;
-  max-height: 58px;
+  max-width: min(260px, 100%);
+  max-height: 112px;
   object-fit: contain;
+  mix-blend-mode: multiply;
   filter: grayscale(1);
-  opacity: 0.62;
+  opacity: 0.78;
   transition:
     filter 350ms var(--ease-out),
     opacity 350ms var(--ease-out);
@@ -1824,13 +1825,13 @@
   }
 
   .logo-wall__item {
-    min-height: 105px;
-    padding: 1.2rem;
+    min-height: 140px;
+    padding: 1rem;
   }
 
   .logo-wall__item img {
-    max-width: 115px;
-    max-height: 45px;
+    max-width: min(180px, 100%);
+    max-height: 84px;
   }
 }
 
