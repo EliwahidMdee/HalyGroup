@@ -77,8 +77,8 @@ main {
   color: var(--white);
   clip-path: inset(0 0 0 0);
   transition:
-    clip-path 700ms var(--ease-in-out),
-    opacity 400ms 300ms var(--ease-out);
+    clip-path 480ms var(--ease-in-out),
+    opacity 220ms 220ms var(--ease-out);
 }
 
 .preloader.is-leaving {
@@ -132,7 +132,7 @@ main {
 }
 
 .preloader__logo-wrap {
-  animation: preloader-logo 900ms var(--ease-out) both;
+  animation: preloader-logo 560ms var(--ease-out) both;
 }
 
 .preloader__logo {
@@ -152,7 +152,7 @@ main {
   height: 100%;
   background: var(--gold);
   transform: translateX(-100%);
-  animation: preloader-track 1.35s var(--ease-in-out) 0.1s forwards;
+  animation: preloader-track 0.8s var(--ease-in-out) 0.05s forwards;
 }
 
 @keyframes page-in {

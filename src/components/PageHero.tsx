@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { getImageSrcSet } from '../lib/images'
 import { Icon } from './Icon'
 
 type PageHeroProps = {
@@ -26,7 +27,14 @@ export function PageHero({
   return (
     <section className="page-hero">
       <div className="page-hero__media" aria-hidden="true">
-        <img src={image} alt={imageAlt} fetchPriority="high" decoding="async" />
+        <img
+          src={image}
+          srcSet={getImageSrcSet(image)}
+          sizes="100vw"
+          alt={imageAlt}
+          fetchPriority="high"
+          decoding="async"
+        />
       </div>
       <div className="page-hero__shade" aria-hidden="true" />
       <div className="page-hero__grid" aria-hidden="true" />

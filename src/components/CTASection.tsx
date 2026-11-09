@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { site } from '../data/site'
+import { getImageSrcSet } from '../lib/images'
 import { Icon } from './Icon'
 import { Reveal } from './Reveal'
 
@@ -22,7 +23,14 @@ export function CTASection({
   return (
     <section className="cta-section">
       <div className="cta-section__media" aria-hidden="true">
-        <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+        <img
+          src={image}
+          srcSet={getImageSrcSet(image)}
+          sizes="100vw"
+          alt={imageAlt}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="cta-section__shade" aria-hidden="true" />
       <div className="cta-section__lines" aria-hidden="true">

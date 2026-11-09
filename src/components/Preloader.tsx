@@ -15,12 +15,12 @@ export function Preloader() {
     if (!visible) return
 
     document.body.classList.add('intro-active')
-    const leaveTimer = window.setTimeout(() => setLeaving(true), 1300)
+    const leaveTimer = window.setTimeout(() => setLeaving(true), 850)
     const hideTimer = window.setTimeout(() => {
       window.sessionStorage.setItem(INTRO_KEY, 'true')
       setVisible(false)
       document.body.classList.remove('intro-active')
-    }, 1900)
+    }, 1350)
 
     return () => {
       window.clearTimeout(leaveTimer)

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Service } from '../data/site'
+import { getImageSrcSet } from '../lib/images'
 import { Icon } from './Icon'
 import { Reveal } from './Reveal'
 
@@ -14,7 +15,14 @@ export function ServiceCard({ service, delay = 0, compact = false }: ServiceCard
     <Reveal as="article" className={`service-card ${compact ? 'service-card--compact' : ''}`} delay={delay}>
       <Link to={`/services/${service.slug}`} className="service-card__link">
         <div className="service-card__media">
-          <img src={service.image} alt={service.imageAlt} loading="lazy" decoding="async" />
+          <img
+            src={service.image}
+            srcSet={getImageSrcSet(service.image)}
+            sizes="(max-width: 760px) 100vw, 50vw"
+            alt={service.imageAlt}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="service-card__shade" aria-hidden="true" />
         <div className="service-card__top">

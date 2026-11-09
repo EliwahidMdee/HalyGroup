@@ -11,6 +11,7 @@ import type { IconName } from '../data/site'
 import { industries, services } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { usePointerGlow } from '../hooks/usePointerGlow'
+import { getImageSrcSet } from '../lib/images'
 
 const fleet = [
   {
@@ -20,13 +21,13 @@ const fleet = [
     tag: 'Chauffeur-driven',
   },
   {
-    image: '/media/fleet/fleet-23.webp',
+    image: '/media/fleet/fleet-35-1.webp',
     title: 'Self-drive & flexible',
     description: 'Flexible rental arrangements for business travel, personal trips and daily needs.',
     tag: 'Self-drive',
   },
   {
-    image: '/media/fleet/fleet-35-1.webp',
+    image: '/media/fleet/fleet-23.webp',
     title: 'Group & staff movement',
     description: 'Coordinated vehicle options for teams, visitors and group itineraries.',
     tag: 'Group mobility',
@@ -47,7 +48,7 @@ export function Home() {
         <div className="hero__media">
           <img
             src="/media/hero/hero-mobility.webp"
-            srcSet="/media/hero/hero-mobility-1200.webp 1200w, /media/hero/hero-mobility.webp 2400w"
+            srcSet={getImageSrcSet('/media/hero/hero-mobility.webp')}
             sizes="100vw"
             alt="A vehicle travelling on an open road"
             fetchPriority="high"
@@ -172,6 +173,8 @@ export function Home() {
             <Reveal as="figure" className="intro-mosaic__main">
               <img
                 src="/media/services/transport-staff.webp"
+                srcSet={getImageSrcSet('/media/services/transport-staff.webp')}
+                sizes="(max-width: 760px) 100vw, 58vw"
                 alt="Corporate staff transportation service"
                 loading="lazy"
                 decoding="async"
@@ -184,6 +187,8 @@ export function Home() {
             <Reveal as="figure" className="intro-mosaic__small intro-mosaic__small--top" delay={100}>
               <img
                 src="/media/services/travel-destination.webp"
+                srcSet={getImageSrcSet('/media/services/travel-destination.webp')}
+                sizes="(max-width: 760px) 50vw, 42vw"
                 alt="Coastal destination representing travel planning"
                 loading="lazy"
                 decoding="async"
@@ -196,6 +201,8 @@ export function Home() {
             <Reveal as="figure" className="intro-mosaic__small intro-mosaic__small--bottom" delay={180}>
               <img
                 src="/media/services/logistics-documents.webp"
+                srcSet={getImageSrcSet('/media/services/logistics-documents.webp')}
+                sizes="(max-width: 760px) 50vw, 42vw"
                 alt="Document and parcel transportation service"
                 loading="lazy"
                 decoding="async"
@@ -206,7 +213,6 @@ export function Home() {
               </figcaption>
             </Reveal>
             <Reveal className="intro-mosaic__badge" delay={240}>
-              <Icon name="spark" size={22} />
               <span>
                 Four service lines
                 <br />

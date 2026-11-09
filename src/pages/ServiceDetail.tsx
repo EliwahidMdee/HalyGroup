@@ -5,6 +5,7 @@ import { PageHero } from '../components/PageHero'
 import { Reveal } from '../components/Reveal'
 import { services } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
+import { getImageSrcSet } from '../lib/images'
 import { NotFound } from './NotFound'
 
 const galleries: Record<string, { src: string; alt: string; label: string }[]> = {
@@ -115,7 +116,14 @@ export function ServiceDetail() {
         <section className="service-gallery" aria-label={`${service.title} in practice`}>
           {gallery.map((image, galleryIndex) => (
             <Reveal as="figure" className="service-gallery__item" key={image.src} delay={galleryIndex * 80}>
-              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+              <img
+                src={image.src}
+                srcSet={getImageSrcSet(image.src)}
+                sizes="(max-width: 540px) 100vw, (max-width: 760px) 50vw, 33vw"
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+              />
               <figcaption>
                 <span>0{galleryIndex + 1}</span>
                 {image.label}
@@ -135,6 +143,8 @@ export function ServiceDetail() {
             <Reveal className="service-feature__media">
               <img
                 src={service.feature.image}
+                srcSet={getImageSrcSet(service.feature.image)}
+                sizes="(max-width: 900px) 100vw, 50vw"
                 alt={service.feature.imageAlt}
                 loading="lazy"
                 decoding="async"
@@ -221,7 +231,14 @@ export function ServiceDetail() {
               <Reveal key={item.slug} delay={relatedIndex * 60}>
                 <Link to={`/services/${item.slug}`} className="related-card">
                   <span className="related-card__media">
-                    <img src={item.image} alt="" loading="lazy" decoding="async" />
+                    <img
+                      src={item.image}
+                      srcSet={getImageSrcSet(item.image)}
+                      sizes="(max-width: 760px) 100vw, 33vw"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </span>
                   <span className="related-card__content">
                     <span>{item.kicker}</span>

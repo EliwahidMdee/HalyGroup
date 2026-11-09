@@ -1,17 +1,26 @@
-import { useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { BackToTop } from './components/BackToTop'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Preloader } from './components/Preloader'
 import { ScrollProgress } from './components/ScrollProgress'
-import { About } from './pages/About'
-import { Contact } from './pages/Contact'
 import { Home } from './pages/Home'
-import { Industries } from './pages/Industries'
-import { NotFound } from './pages/NotFound'
-import { ServiceDetail } from './pages/ServiceDetail'
-import { Services } from './pages/Services'
+
+const About = lazy(() => import('./pages/About').then((module) => ({ default: module.About })))
+const Contact = lazy(() => import('./pages/Contact').then((module) => ({ default: module.Contact })))
+const Industries = lazy(() =>
+  import('./pages/Industries').then((module) => ({ default: module.Industries })),
+)
+const NotFound = lazy(() =>
+  import('./pages/NotFound').then((module) => ({ default: module.NotFound })),
+)
+const ServiceDetail = lazy(() =>
+  import('./pages/ServiceDetail').then((module) => ({ default: module.ServiceDetail })),
+)
+const Services = lazy(() =>
+  import('./pages/Services').then((module) => ({ default: module.Services })),
+)
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -43,15 +52,17 @@ export default function App() {
       <Preloader />
       <Header />
       <main id="main-content" key={location.pathname}>
-        <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<div className="route-loading" aria-hidden="true" />}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
       <BackToTop />
