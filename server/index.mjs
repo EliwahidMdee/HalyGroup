@@ -139,7 +139,7 @@ app.post('/api/enquiry', async (request, response) => {
   })
 })
 
-const dist = path.join(root, 'dist')
+const dist = path.join(root, 'build')
 if (existsSync(dist)) {
   app.use(express.static(dist, { maxAge: '1h', index: false }))
   app.use((request, response, next) => {
