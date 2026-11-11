@@ -203,16 +203,16 @@ export function Home() {
             </Reveal>
             <Reveal as="figure" className="intro-mosaic__small intro-mosaic__small--bottom" delay={180}>
               <img
-                src="/media/services/logistics-documents.webp"
-                srcSet={getImageSrcSet('/media/services/logistics-documents.webp')}
+                src="/media/services/logistics-cargo.webp"
+                srcSet={getImageSrcSet('/media/services/logistics-cargo.webp')}
                 sizes="(max-width: 760px) 50vw, 42vw"
-                alt="Document and parcel transportation service"
+                alt="Cargo truck used for light commercial cargo movement"
                 loading="lazy"
                 decoding="async"
               />
               <figcaption>
                 <span>03</span>
-                Details delivered
+                Cargo in motion
               </figcaption>
             </Reveal>
             <Reveal className="intro-mosaic__badge" delay={240}>
@@ -378,8 +378,8 @@ export function Home() {
         <div className="duo-panel duo-panel--cargo">
           <div className="duo-panel__media">
             <img
-              src="/media/services/logistics-parcels.webp"
-              alt="Parcels prepared for delivery"
+              src="/media/services/logistics-cargo.webp"
+              alt="Cargo truck used for light commercial cargo movement"
               loading="lazy"
               decoding="async"
             />
@@ -389,17 +389,16 @@ export function Home() {
               <span className="eyebrow__line" />
               Light cargo & logistics
             </span>
-            <h2>The last mile, handled.</h2>
+            <h2>Cargo, handled end to end.</h2>
             <p>
-              Documents, parcels and light commercial cargo moved with care across urban and
-              intercity routes.
+              Light commercial cargo moved with care across urban and intercity routes.
             </p>
             <ul>
               <li>
                 <Icon name="check" size={15} /> Same-day & scheduled deliveries
               </li>
               <li>
-                <Icon name="check" size={15} /> Document & parcel movements
+                <Icon name="check" size={15} /> Urban & intercity routes
               </li>
               <li>
                 <Icon name="check" size={15} /> Small commercial cargo

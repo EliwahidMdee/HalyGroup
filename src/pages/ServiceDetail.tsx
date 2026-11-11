@@ -3,6 +3,7 @@ import { CTASection } from '../components/CTASection'
 import { Icon } from '../components/Icon'
 import { PageHero } from '../components/PageHero'
 import { Reveal } from '../components/Reveal'
+import { TrackingShowcase } from '../components/TrackingShowcase'
 import { services } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { getImageSrcSet } from '../lib/images'
@@ -43,56 +44,84 @@ export function ServiceDetail() {
         ]}
       />
 
-      <section className="section section--cream service-intro">
-        <div className="container">
-          <Link to="/services" className="back-link">
-            <Icon name="arrow" size={16} /> All services
-          </Link>
+      {service.slug === 'tracking' ? (
+        <>
+          <section className="section section--white service-intro">
+            <div className="container">
+              <Link to="/services" className="back-link">
+                <Icon name="arrow" size={16} /> All services
+              </Link>
 
-          <div className="service-intro__grid">
-            <Reveal>
-              <span className="eyebrow">
-                <span className="eyebrow__line" />
-                What we do
-              </span>
-              <h2>
-                {service.slug === 'transport' && (
-                  <>The right vehicle, for the way you move.</>
-                )}
-                {service.slug === 'travel' && <>Travel, planned around you.</>}
-                {service.slug === 'tracking' && <>A clearer view of your operation.</>}
-                {service.slug === 'logistics' && <>From documents to the last mile.</>}
-              </h2>
-            </Reveal>
-            <Reveal className="service-intro__copy" delay={100}>
-              <p className="service-intro__lead">{service.description}</p>
-              <div className="service-intro__note">
-                <Icon name="shield" size={21} />
-                <p>{service.note}</p>
+              <div className="service-intro__grid">
+                <Reveal>
+                  <span className="eyebrow">
+                    <span className="eyebrow__line" />
+                    What we do
+                  </span>
+                  <h2>A clearer view of your operation.</h2>
+                </Reveal>
+                <Reveal className="service-intro__copy" delay={100}>
+                  <p className="service-intro__lead">{service.description}</p>
+                  <div className="service-intro__note">
+                    <Icon name="shield" size={21} />
+                    <p>{service.note}</p>
+                  </div>
+                </Reveal>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </section>
 
-          <div className="offerings-grid">
-            {service.offerings.map((offering, offeringIndex) => (
-              <Reveal className="offering-card" key={offering.title} delay={offeringIndex * 55}>
-                <span className="offering-card__index">
-                  {String(offeringIndex + 1).padStart(2, '0')}
+          <TrackingShowcase showCta={false} />
+        </>
+      ) : (
+        <section className="section section--cream service-intro">
+          <div className="container">
+            <Link to="/services" className="back-link">
+              <Icon name="arrow" size={16} /> All services
+            </Link>
+
+            <div className="service-intro__grid">
+              <Reveal>
+                <span className="eyebrow">
+                  <span className="eyebrow__line" />
+                  What we do
                 </span>
-                <h3>{offering.title}</h3>
-                <p>{offering.description}</p>
-                <span className="offering-card__line" aria-hidden="true" />
+                <h2>
+                  {service.slug === 'transport' && (
+                    <>The right vehicle, for the way you move.</>
+                  )}
+                  {service.slug === 'travel' && <>Travel, planned around you.</>}
+                  {service.slug === 'logistics' && <>Your cargo, in good hands.</>}
+                </h2>
               </Reveal>
-            ))}
+              <Reveal className="service-intro__copy" delay={100}>
+                <p className="service-intro__lead">{service.description}</p>
+                <div className="service-intro__note">
+                  <Icon name="shield" size={21} />
+                  <p>{service.note}</p>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="offerings-grid">
+              {service.offerings.map((offering, offeringIndex) => (
+                <Reveal className="offering-card" key={offering.title} delay={offeringIndex * 55}>
+                  <span className="offering-card__index">
+                    {String(offeringIndex + 1).padStart(2, '0')}
+                  </span>
+                  <h3>{offering.title}</h3>
+                  <p>{offering.description}</p>
+                  <span className="offering-card__line" aria-hidden="true" />
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {service.feature && (
         <section
-          className={`section service-feature ${
-            service.feature.theme === 'dark' ? 'service-feature--dark' : 'service-feature--light'
-          }`}
+          className={`section service-feature service-feature--${service.feature.theme}`}
         >
           <div className="container service-feature__grid">
             <Reveal className="service-feature__media">
@@ -121,14 +150,16 @@ export function ServiceDetail() {
               </span>
               <h2>{service.feature.title}</h2>
               <p>{service.feature.body}</p>
-              <ul className="feature-points">
-                {service.feature.points.map((point) => (
-                  <li key={point}>
-                    <Icon name="check" size={16} />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+              {service.feature.points && service.feature.points.length > 0 && (
+                <ul className="feature-points">
+                  {service.feature.points.map((point) => (
+                    <li key={point}>
+                      <Icon name="check" size={16} />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <Link to="/contact" className="text-link">
                 Discuss your requirement <Icon name="arrow" size={17} />
               </Link>

@@ -11,12 +11,12 @@ const sectorSupport: Record<string, string[]> = {
   'Corporate & Multinational Companies': [
     'Staff & executive transport',
     'Corporate travel coordination',
-    'Document & parcel movement',
+    'Light cargo movement',
   ],
   'Government & NGOs': [
     'Coordinated ground transport',
     'Travel & accommodation support',
-    'Scheduled deliveries',
+    'Light cargo support',
   ],
   'Travel & Tourism': [
     'Airport & hotel transfers',
@@ -24,12 +24,12 @@ const sectorSupport: Record<string, string[]> = {
     'Travel planning',
   ],
   'Financial Institutions': [
-    'Document movement',
-    'Scheduled document support',
     'Staff mobility',
+    'Executive travel',
+    'Fleet visibility',
   ],
   'Logistics & E-commerce': [
-    'Parcel deliveries',
+    'Scheduled cargo runs',
     'Light commercial cargo',
     'Fleet visibility',
   ],
@@ -40,7 +40,7 @@ const sectorSupport: Record<string, string[]> = {
   ],
   'SMEs & Fleet Owners': [
     'Flexible car hire',
-    'Scheduled deliveries',
+    'Light cargo support',
     'Smart tracking',
   ],
   'Individual Vehicle Owners': [
@@ -59,7 +59,7 @@ const tailoring = [
   {
     title: 'Match the service to the need',
     description:
-      'Vehicle, itinerary, delivery schedule or tracking setup — the solution is shaped around the assignment, not a fixed script.',
+      'Vehicle, itinerary, cargo schedule or tracking setup — the solution is shaped around the assignment, not a fixed script.',
   },
   {
     title: 'Keep the arrangement flexible',

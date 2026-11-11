@@ -5,7 +5,6 @@ import { PageHero } from '../components/PageHero'
 import { Reveal } from '../components/Reveal'
 import { SectionHeader } from '../components/SectionHeader'
 import { ServiceCard } from '../components/ServiceCard'
-import { TrackingShowcase } from '../components/TrackingShowcase'
 import { services } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -13,14 +12,14 @@ const engagementOptions = [
   {
     title: 'One-off requirements',
     description:
-      'A single transfer, rental, booking or delivery — coordinated with the same attention as an ongoing account.',
+      'A single transfer, rental, booking or cargo movement — coordinated with the same attention as an ongoing account.',
     icon: 'spark' as const,
     link: 'Request a one-off service',
   },
   {
     title: 'Recurring operations',
     description:
-      'Scheduled staff movement, repeat delivery runs, travel coordination or fleet visibility for day-to-day operations.',
+      'Scheduled staff movement, repeat cargo runs, travel coordination or fleet visibility for day-to-day operations.',
     icon: 'clock' as const,
     link: 'Discuss an ongoing need',
   },
@@ -87,8 +86,6 @@ export function Services() {
           </div>
         </div>
       </section>
-
-      <TrackingShowcase />
 
       <section className="section section--white engagements-section">
         <div className="container">

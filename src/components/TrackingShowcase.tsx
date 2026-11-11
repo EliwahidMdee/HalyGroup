@@ -10,14 +10,25 @@ const trackingFeatures: [IconName, string, string][] = [
   ['route', 'Fleet monitoring', 'Monitoring shaped around your operating needs.'],
 ]
 
-export function TrackingShowcase() {
+export function TrackingShowcase({
+  showCta = true,
+  theme = 'dark',
+}: {
+  showCta?: boolean
+  theme?: 'dark' | 'cream'
+}) {
+  const isCream = theme === 'cream'
+
   return (
-    <section className="section tracking-section" id="smart-tracking">
+    <section
+      className={`section tracking-section${isCream ? ' tracking-section--cream' : ''}`}
+      id="smart-tracking"
+    >
       <div className="tracking-section__glow" aria-hidden="true" />
       <div className="container tracking-section__grid">
         <div className="tracking-section__content">
           <Reveal>
-            <span className="eyebrow eyebrow--light">
+            <span className={isCream ? 'eyebrow' : 'eyebrow eyebrow--light'}>
               <span className="eyebrow__line" />
               Smart tracking solutions
             </span>
@@ -48,12 +59,14 @@ export function TrackingShowcase() {
             ))}
           </div>
 
-          <Link to="/services/tracking" className="button button--outline">
-            Explore smart tracking
-            <span className="button__icon">
-              <Icon name="arrowUp" size={18} />
-            </span>
-          </Link>
+          {showCta && (
+            <Link to="/services/tracking" className="button button--outline">
+              Explore smart tracking
+              <span className="button__icon">
+                <Icon name="arrowUp" size={18} />
+              </span>
+            </Link>
+          )}
         </div>
 
         <Reveal className="tracking-board" delay={160}>

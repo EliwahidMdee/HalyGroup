@@ -933,6 +933,70 @@
   text-transform: none;
 }
 
+/* Cream variant — same beige treatment as the "Keep moving" sections */
+.tracking-section.tracking-section--cream {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(189, 147, 70, 0.09), transparent 26rem),
+    radial-gradient(circle at 4% 92%, rgba(27, 44, 88, 0.055), transparent 30rem),
+    var(--cream);
+  color: var(--ink);
+}
+
+.tracking-section--cream::before {
+  background-image:
+    linear-gradient(rgba(27, 44, 88, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 44, 88, 0.035) 1px, transparent 1px);
+}
+
+.tracking-section--cream .tracking-section__glow {
+  background: radial-gradient(circle, rgba(27, 44, 88, 0.05), transparent 62%);
+}
+
+.tracking-section--cream .tracking-section__lead {
+  color: var(--muted);
+}
+
+.tracking-section--cream .tracking-list__item,
+.tracking-section--cream .tracking-list__item:nth-child(even) {
+  border-color: rgba(27, 44, 88, 0.12);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tracking-section--cream .tracking-list__item:hover {
+    border-color: rgba(189, 147, 70, 0.42);
+    background: var(--paper);
+  }
+}
+
+.tracking-section--cream .tracking-list__icon {
+  border-color: rgba(189, 147, 70, 0.5);
+  color: var(--gold);
+}
+
+.tracking-section--cream .tracking-board {
+  background: linear-gradient(145deg, rgba(13, 28, 55, 0.96), rgba(5, 12, 25, 0.93));
+  box-shadow: 0 38px 110px rgba(11, 23, 48, 0.24);
+}
+
+.tracking-section--cream .tracking-list__item p {
+  color: var(--muted);
+}
+
+.tracking-section--cream .button--outline {
+  border-color: rgba(27, 44, 88, 0.28);
+  background: rgba(27, 44, 88, 0.03);
+  color: var(--navy);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tracking-section--cream .button--outline:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+  }
+}
+
 /* Duo panel */
 .duo-section {
   display: grid;
@@ -1590,6 +1654,14 @@
 .service-feature--dark {
   background: var(--navy-deep);
   color: var(--white);
+}
+
+.service-feature--cream {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(189, 147, 70, 0.09), transparent 26rem),
+    radial-gradient(circle at 4% 92%, rgba(27, 44, 88, 0.055), transparent 30rem),
+    var(--cream);
+  color: var(--ink);
 }
 
 .service-feature__grid {

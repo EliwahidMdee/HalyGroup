@@ -19,15 +19,15 @@ const variants: Record<string, ImageVariant[]> = {
     { width: 1200, src: '/media/hero/hero-city-1200.webp' },
     { width: 1500, src: '/media/hero/hero-city.webp' },
   ],
-  '/media/services/logistics-parcels.webp': [
-    { width: 800, src: '/media/services/logistics-parcels-800.webp' },
-    { width: 1200, src: '/media/services/logistics-parcels-1200.webp' },
-    { width: 1600, src: '/media/services/logistics-parcels.webp' },
-  ],
   '/media/services/tracking-dashboard.webp': [
     { width: 800, src: '/media/services/tracking-dashboard-800.webp' },
     { width: 1200, src: '/media/services/tracking-dashboard-1200.webp' },
     { width: 1571, src: '/media/services/tracking-dashboard.webp' },
+  ],
+  '/media/services/logistics-cargo.webp': [
+    { width: 800, src: '/media/services/logistics-cargo-800.webp' },
+    { width: 1200, src: '/media/services/logistics-cargo-1200.webp' },
+    { width: 1600, src: '/media/services/logistics-cargo.webp' },
   ],
   '/media/services/travel-hotel.webp': [
     { width: 1000, src: '/media/services/travel-hotel-1000.webp' },
@@ -43,10 +43,6 @@ const variants: Record<string, ImageVariant[]> = {
     { width: 1000, src: '/media/services/travel-destination-1000.webp' },
     { width: 1200, src: '/media/services/travel-destination-1200.webp' },
     { width: 1600, src: '/media/services/travel-destination.webp' },
-  ],
-  '/media/services/logistics-documents.webp': [
-    { width: 600, src: '/media/services/logistics-documents-600.webp' },
-    { width: 1400, src: '/media/services/logistics-documents.webp' },
   ],
   '/media/services/transport-selfdrive.webp': [
     { width: 1000, src: '/media/services/transport-selfdrive-1000.webp' },

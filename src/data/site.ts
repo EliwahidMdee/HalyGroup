@@ -47,10 +47,10 @@ export type Service = {
     kicker: string
     title: string
     body: string
-    points: string[]
+    points?: string[]
     image: string
     imageAlt: string
-    theme: 'dark' | 'light'
+    theme: 'dark' | 'light' | 'cream'
   }
 }
 
@@ -235,10 +235,9 @@ export const services: Service[] = [
       kicker: 'Operational clarity',
       title: 'See more. React sooner. Operate better.',
       body: 'Tracking is more than a dot on a map. It is the ability to understand where assets are, how they are being used and where attention may be needed. Our solutions bring location, camera and container technologies into a clearer operational picture.',
-      points: ['GPS location visibility', 'AI-powered dash cameras', 'Smart container locking'],
       image: '/media/services/tracking-dashboard.webp',
       imageAlt: 'Vehicle dashboard and navigation technology',
-      theme: 'dark',
+      theme: 'cream',
     },
   },
   {
@@ -246,44 +245,43 @@ export const services: Service[] = [
     title: 'Light Cargo & Logistics',
     navTitle: 'Light Cargo & Logistics',
     kicker: '04 / Logistics',
-    summary: 'Secure, time-efficient movement of documents, parcels and light commercial cargo.',
+    summary: 'Secure, time-efficient movement of light commercial cargo.',
     description:
-      'Haly Group provides dependable light cargo and logistics solutions designed to simplify the movement of documents, parcels and commercial goods. Through efficient coordination, flexible delivery options and a commitment to reliability, we help individuals and businesses move their items safely and conveniently across urban and intercity destinations.',
-    image: '/media/services/logistics-documents.webp',
-    heroImage: '/media/services/logistics-documents.webp',
-    imageAlt: 'Document and parcel transportation service from Haly Group',
+      'Haly Group provides dependable light cargo and logistics solutions designed to simplify the movement of commercial goods. Through efficient coordination, flexible scheduling and a commitment to reliability, we help businesses move their cargo safely and conveniently across urban and intercity destinations.',
+    image: '/media/services/logistics-cargo.webp',
+    heroImage: '/media/services/logistics-cargo.webp',
+    imageAlt: 'Cargo truck used for light commercial cargo movement',
     offerings: [
       {
         title: 'Same-Day & Scheduled Deliveries',
         description:
-          'Flexible delivery services designed to meet urgent deadlines and planned schedules.',
-      },
-      {
-        title: 'Document & Parcel Transportation',
-        description:
-          'Transportation of important documents, packages and personal consignments with a focus on reliability.',
+          'Flexible cargo delivery designed to meet urgent deadlines and planned schedules.',
       },
       {
         title: 'Small Commercial Cargo',
         description:
           'Practical transportation for small commercial shipments, products, supplies and lightweight goods.',
       },
+      {
+        title: 'Intercity Cargo Movement',
+        description:
+          'Coordinated movement of cargo between Dar es Salaam and other destinations.',
+      },
     ],
     idealFor: [
       'Logistics & e-commerce',
       'Corporate & multinational companies',
-      'Financial institutions',
       'SMEs',
-      'Individual senders',
+      'Retail & distribution',
     ],
-    note: 'Collection and delivery windows, item suitability and route coverage are confirmed before dispatch.',
+    note: 'Collection and delivery windows, cargo suitability and route coverage are confirmed before dispatch.',
     feature: {
       kicker: 'Handled with care',
-      title: 'The last mile, without the loose ends.',
-      body: 'Every consignment carries something that matters. Our light cargo and logistics service brings coordination, flexibility and care to the movement of documents, parcels and small commercial cargo.',
-      points: ['Same-day & scheduled options', 'Document & parcel transportation', 'Small commercial cargo'],
+      title: 'Cargo, handled end to end.',
+      body: 'Every load carries something that matters. Our light cargo and logistics service brings coordination, flexibility and care to the movement of commercial goods across urban and intercity routes.',
+      points: ['Same-day & scheduled options', 'Small commercial cargo', 'Urban & intercity routes'],
       image: '/media/services/logistics-cargo.webp',
-      imageAlt: 'Light commercial cargo prepared for transportation',
+      imageAlt: 'Cargo truck used for light commercial cargo movement',
       theme: 'light',
     },
   },
@@ -350,7 +348,7 @@ export const industries = [
     icon: 'building' as IconName,
     title: 'Corporate & Multinational Companies',
     description:
-      'Staff mobility, executive travel, travel coordination and document movement for everyday operations.',
+      'Staff mobility, executive travel, travel coordination and light cargo movement for everyday operations.',
   },
   {
     icon: 'landmark' as IconName,
@@ -368,13 +366,13 @@ export const industries = [
     icon: 'briefcase' as IconName,
     title: 'Financial Institutions',
     description:
-      'Scheduled movement of documents and time-sensitive items, supported by professional coordination.',
+      'Coordinated staff mobility and fleet visibility for everyday operations.',
   },
   {
     icon: 'box' as IconName,
     title: 'Logistics & E-commerce',
     description:
-      'Light commercial cargo, parcels and documents for the movement of goods.',
+      'Light commercial cargo and coordinated goods movement for distribution operations.',
   },
   {
     icon: 'spark' as IconName,
@@ -400,7 +398,7 @@ export const processSteps = [
   {
     number: '01',
     title: 'Tell us what moves',
-    description: 'Share the people, parcel or operation you need to move, and the timeline you are working to.',
+    description: 'Share the people, cargo or operation you need to move, and the timeline you are working to.',
   },
   {
     number: '02',
@@ -435,7 +433,7 @@ export const faqs = [
   {
     question: 'Can I request a one-off service?',
     answer:
-      'Yes. A single transfer, rental, travel booking or delivery can be discussed with our team. We also support repeat and contracted requirements.',
+      'Yes. A single transfer, rental, travel booking or cargo movement can be discussed with our team. We also support repeat and contracted requirements.',
   },
   {
     question: 'Can services be tailored to our organisation?',
@@ -448,7 +446,7 @@ export const faqs = [
       'Send your requirement through the enquiry form, call +255 774 541 541 or email office@halygroupltd.com. Include your dates, location and the service you need so the team can respond with the right questions.',
   },
   {
-    question: 'Are transport and delivery services available outside Dar es Salaam?',
+    question: 'Are transport and logistics services available outside Dar es Salaam?',
     answer:
       'Our base is in Dar es Salaam. Intercity routes and destinations can be discussed with our team and confirmed per assignment.',
   },

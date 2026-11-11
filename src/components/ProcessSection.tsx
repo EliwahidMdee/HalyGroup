@@ -20,7 +20,7 @@ export function ProcessSection() {
           <Reveal delay={120}>
             <p>
               A clear, coordinated process keeps every assignment moving — whether it is one
-              journey, one delivery or an ongoing operational need.
+              journey, one cargo movement or an ongoing operational need.
             </p>
           </Reveal>
         </div>
