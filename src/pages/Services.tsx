@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 import { CTASection } from '../components/CTASection'
 import { Icon } from '../components/Icon'
 import { PageHero } from '../components/PageHero'
-import { ProcessSection } from '../components/ProcessSection'
 import { Reveal } from '../components/Reveal'
 import { SectionHeader } from '../components/SectionHeader'
 import { ServiceCard } from '../components/ServiceCard'
+import { TrackingShowcase } from '../components/TrackingShowcase'
 import { services } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -20,7 +20,7 @@ const engagementOptions = [
   {
     title: 'Recurring operations',
     description:
-      'Scheduled staff movement, repeat courier runs, travel coordination or fleet visibility for day-to-day operations.',
+      'Scheduled staff movement, repeat delivery runs, travel coordination or fleet visibility for day-to-day operations.',
     icon: 'clock' as const,
     link: 'Discuss an ongoing need',
   },
@@ -36,7 +36,7 @@ const engagementOptions = [
 export function Services() {
   usePageMeta(
     'Services | Haly Group Limited',
-    'Explore Haly Group services: transport and car hire, travel agency, smart tracking, and light cargo and courier solutions.',
+    'Explore Haly Group services: transport and car hire, travel agency, smart tracking, and light cargo and logistics solutions.',
   )
 
   return (
@@ -88,6 +88,8 @@ export function Services() {
         </div>
       </section>
 
+      <TrackingShowcase />
+
       <section className="section section--white engagements-section">
         <div className="container">
           <SectionHeader
@@ -124,8 +126,6 @@ export function Services() {
           </div>
         </div>
       </section>
-
-      <ProcessSection />
 
       <CTASection
         title={

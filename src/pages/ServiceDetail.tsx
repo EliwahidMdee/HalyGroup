@@ -8,29 +8,6 @@ import { usePageMeta } from '../hooks/usePageMeta'
 import { getImageSrcSet } from '../lib/images'
 import { NotFound } from './NotFound'
 
-const galleries: Record<string, { src: string; alt: string; label: string }[]> = {
-  transport: [
-    { src: '/media/services/transport-selfdrive.webp', alt: 'Self-drive rental vehicle', label: 'Self-drive' },
-    { src: '/media/services/transport-airport.webp', alt: 'Airport and hotel transfer', label: 'Transfers' },
-    { src: '/media/services/transport-staff.webp', alt: 'Corporate staff transportation', label: 'Corporate' },
-  ],
-  travel: [
-    { src: '/media/services/travel-airport.webp', alt: 'Aircraft at an airport', label: 'Flights' },
-    { src: '/media/services/travel-hotel.webp', alt: 'Hotel accommodation', label: 'Stay' },
-    { src: '/media/services/travel-destination.webp', alt: 'Coastal travel destination', label: 'Journeys' },
-  ],
-  tracking: [
-    { src: '/media/services/tracking-gps.webp', alt: 'GPS tracking service', label: 'GPS' },
-    { src: '/media/services/tracking-dashboard.webp', alt: 'Vehicle dashboard technology', label: 'Insight' },
-    { src: '/media/services/tracking-map.webp', alt: 'Map and route visibility', label: 'Visibility' },
-  ],
-  logistics: [
-    { src: '/media/services/logistics-cargo.webp', alt: 'Light commercial cargo', label: 'Cargo' },
-    { src: '/media/services/logistics-parcels.webp', alt: 'Parcels prepared for delivery', label: 'Parcels' },
-    { src: '/media/services/logistics-courier.webp', alt: 'Courier delivery service', label: 'Courier' },
-  ],
-}
-
 export function ServiceDetail() {
   const { slug } = useParams()
   const service = services.find((item) => item.slug === slug)
@@ -44,7 +21,6 @@ export function ServiceDetail() {
 
   const index = services.findIndex((item) => item.slug === service.slug)
   const related = services.filter((item) => item.slug !== service.slug)
-  const gallery = galleries[service.slug] ?? []
 
   return (
     <>
@@ -111,27 +87,6 @@ export function ServiceDetail() {
           </div>
         </div>
       </section>
-
-      {gallery.length > 0 && (
-        <section className="service-gallery" aria-label={`${service.title} in practice`}>
-          {gallery.map((image, galleryIndex) => (
-            <Reveal as="figure" className="service-gallery__item" key={image.src} delay={galleryIndex * 80}>
-              <img
-                src={image.src}
-                srcSet={getImageSrcSet(image.src)}
-                sizes="(max-width: 540px) 100vw, (max-width: 760px) 50vw, 33vw"
-                alt={image.alt}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>
-                <span>0{galleryIndex + 1}</span>
-                {image.label}
-              </figcaption>
-            </Reveal>
-          ))}
-        </section>
-      )}
 
       {service.feature && (
         <section

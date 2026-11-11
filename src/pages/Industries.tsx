@@ -25,11 +25,11 @@ const sectorSupport: Record<string, string[]> = {
   ],
   'Financial Institutions': [
     'Document movement',
-    'Scheduled courier support',
+    'Scheduled document support',
     'Staff mobility',
   ],
   'Logistics & E-commerce': [
-    'B2B deliveries',
+    'Parcel deliveries',
     'Light commercial cargo',
     'Fleet visibility',
   ],
@@ -40,7 +40,7 @@ const sectorSupport: Record<string, string[]> = {
   ],
   'SMEs & Fleet Owners': [
     'Flexible car hire',
-    'Courier support',
+    'Scheduled deliveries',
     'Smart tracking',
   ],
   'Individual Vehicle Owners': [

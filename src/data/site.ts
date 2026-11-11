@@ -60,7 +60,7 @@ export const site = {
   tagline: "Imagine it, we'll do it.",
   positioning: 'Travel. Mobility. Light Cargo / Logistics.',
   description:
-    'A diversified Tanzanian service company providing integrated solutions across transportation, travel management, smart mobility, and light cargo & courier services.',
+    'A diversified Tanzanian service company providing integrated solutions across transportation, travel management, smart mobility, and light cargo & logistics services.',
   phone: '+255774541541',
   phoneDisplay: '+255 774 541 541',
   whatsapp: 'https://wa.me/255663583011',
@@ -244,11 +244,11 @@ export const services: Service[] = [
   {
     slug: 'logistics',
     title: 'Light Cargo & Logistics',
-    navTitle: 'Light Cargo & Courier',
+    navTitle: 'Light Cargo & Logistics',
     kicker: '04 / Logistics',
     summary: 'Secure, time-efficient movement of documents, parcels and light commercial cargo.',
     description:
-      'Haly Group provides dependable light cargo and courier solutions designed to simplify the movement of documents, parcels and commercial goods. Through efficient coordination, flexible delivery options and a commitment to reliability, we help individuals and businesses move their items safely and conveniently across urban and intercity destinations.',
+      'Haly Group provides dependable light cargo and logistics solutions designed to simplify the movement of documents, parcels and commercial goods. Through efficient coordination, flexible delivery options and a commitment to reliability, we help individuals and businesses move their items safely and conveniently across urban and intercity destinations.',
     image: '/media/services/logistics-documents.webp',
     heroImage: '/media/services/logistics-documents.webp',
     imageAlt: 'Document and parcel transportation service from Haly Group',
@@ -264,19 +264,9 @@ export const services: Service[] = [
           'Transportation of important documents, packages and personal consignments with a focus on reliability.',
       },
       {
-        title: 'B2B Delivery Services',
-        description:
-          'Business-to-business delivery support for daily operations and the movement of goods between companies and clients.',
-      },
-      {
         title: 'Small Commercial Cargo',
         description:
           'Practical transportation for small commercial shipments, products, supplies and lightweight goods.',
-      },
-      {
-        title: 'Contracted Courier Services',
-        description:
-          'Ongoing courier arrangements shaped around the rhythm of your business.',
       },
     ],
     idealFor: [
@@ -290,8 +280,8 @@ export const services: Service[] = [
     feature: {
       kicker: 'Handled with care',
       title: 'The last mile, without the loose ends.',
-      body: 'Every consignment carries something that matters. Our light cargo and courier service brings coordination, flexibility and care to the movement of documents, parcels and small commercial cargo.',
-      points: ['Same-day & scheduled options', 'B2B delivery support', 'Contracted courier arrangements'],
+      body: 'Every consignment carries something that matters. Our light cargo and logistics service brings coordination, flexibility and care to the movement of documents, parcels and small commercial cargo.',
+      points: ['Same-day & scheduled options', 'Document & parcel transportation', 'Small commercial cargo'],
       image: '/media/services/logistics-cargo.webp',
       imageAlt: 'Light commercial cargo prepared for transportation',
       theme: 'light',
@@ -360,7 +350,7 @@ export const industries = [
     icon: 'building' as IconName,
     title: 'Corporate & Multinational Companies',
     description:
-      'Staff mobility, executive travel, travel coordination and courier support for everyday operations.',
+      'Staff mobility, executive travel, travel coordination and document movement for everyday operations.',
   },
   {
     icon: 'landmark' as IconName,
@@ -384,7 +374,7 @@ export const industries = [
     icon: 'box' as IconName,
     title: 'Logistics & E-commerce',
     description:
-      'B2B deliveries, light commercial cargo and courier support for the movement of goods.',
+      'Light commercial cargo, parcels and documents for the movement of goods.',
   },
   {
     icon: 'spark' as IconName,
@@ -430,14 +420,10 @@ export const processSteps = [
 ]
 
 export const clientLogos = [
-  { src: '/media/clients/client-26.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-27.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-28.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-29.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-30.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-31.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-32.webp', alt: 'Haly Group client logo' },
-  { src: '/media/clients/client-33.webp', alt: 'Haly Group client logo' },
+  { src: '/media/clients/client-01.webp', alt: 'Haly Group client logo' },
+  { src: '/media/clients/client-02.webp', alt: 'Haly Group client logo' },
+  { src: '/media/clients/client-03.webp', alt: 'Haly Group client logo' },
+  { src: '/media/clients/client-04.webp', alt: 'Haly Group client logo' },
 ]
 
 export const faqs = [
@@ -462,7 +448,7 @@ export const faqs = [
       'Send your requirement through the enquiry form, call +255 774 541 541 or email office@halygroupltd.com. Include your dates, location and the service you need so the team can respond with the right questions.',
   },
   {
-    question: 'Are transport and courier services available outside Dar es Salaam?',
+    question: 'Are transport and delivery services available outside Dar es Salaam?',
     answer:
       'Our base is in Dar es Salaam. Intercity routes and destinations can be discussed with our team and confirmed per assignment.',
   },

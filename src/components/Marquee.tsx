@@ -3,7 +3,6 @@ const items = [
   'Travel Management',
   'Smart Tracking',
   'Light Cargo',
-  'Courier Services',
   'Corporate Mobility',
   'Ground Transfers',
 ]

@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
 import { CTASection } from '../components/CTASection'
 import { Icon } from '../components/Icon'
-import { LogoWall } from '../components/LogoWall'
 import { Marquee } from '../components/Marquee'
 import { ProcessSection } from '../components/ProcessSection'
 import { Reveal } from '../components/Reveal'
 import { SectionHeader } from '../components/SectionHeader'
-import { ServiceCard } from '../components/ServiceCard'
-import type { IconName } from '../data/site'
 import { industries, services } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { usePointerGlow } from '../hooks/usePointerGlow'
@@ -21,13 +18,13 @@ const fleet = [
     tag: 'Chauffeur-driven',
   },
   {
-    image: '/media/fleet/fleet-35-1.webp',
+    image: '/media/fleet/alphard-no-bg.webp',
     title: 'Self-drive & flexible',
     description: 'Flexible rental arrangements for business travel, personal trips and daily needs.',
     tag: 'Self-drive',
   },
   {
-    image: '/media/fleet/fleet-23.webp',
+    image: '/media/fleet/coaster-white-bg.webp',
     title: 'Group & staff movement',
     description: 'Coordinated vehicle options for teams, visitors and group itineraries.',
     tag: 'Group mobility',
@@ -46,16 +43,22 @@ export function Home() {
     <>
       <section className="hero" ref={heroRef}>
         <div className="hero__media">
-          <img
-            src="/media/hero/hero-mobility.webp"
-            srcSet={getImageSrcSet('/media/hero/hero-mobility.webp')}
-            sizes="100vw"
-            alt="A vehicle travelling on an open road"
-            fetchPriority="high"
-            decoding="async"
-            width="2400"
-            height="1600"
-          />
+          <picture>
+            <source
+              media="(max-width: 760px)"
+              srcSet="/media/hero/hero-mobility-mobile.webp"
+            />
+            <img
+              src="/media/hero/hero-mobility.webp"
+              srcSet={getImageSrcSet('/media/hero/hero-mobility.webp')}
+              sizes="100vw"
+              alt="A vehicle travelling on an open road"
+              fetchPriority="high"
+              decoding="async"
+              width="1500"
+              height="1000"
+            />
+          </picture>
         </div>
         <div className="hero__shade" aria-hidden="true" />
         <div className="hero__grid" aria-hidden="true" />
@@ -266,9 +269,20 @@ export function Home() {
             }
           />
 
-          <div className="services-grid">
+          <div className="service-index">
             {services.map((service, index) => (
-              <ServiceCard service={service} key={service.slug} delay={index * 80} />
+              <Reveal className="service-index__row" key={service.slug} delay={index * 60}>
+                <Link to={`/services/${service.slug}`} className="service-index__link">
+                  <span className="service-index__number">0{index + 1}</span>
+                  <span className="service-index__body">
+                    <span className="service-index__title">{service.title}</span>
+                    <span className="service-index__summary">{service.summary}</span>
+                  </span>
+                  <span className="service-index__arrow">
+                    <Icon name="arrowUp" size={18} />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -321,107 +335,6 @@ export function Home() {
             Vehicle options, availability and inclusions are confirmed against your requirement
             before booking.
           </p>
-        </div>
-      </section>
-
-      <section className="section tracking-section">
-        <div className="tracking-section__glow" aria-hidden="true" />
-        <div className="container tracking-section__grid">
-          <div className="tracking-section__content">
-            <Reveal>
-              <span className="eyebrow eyebrow--light">
-                <span className="eyebrow__line" />
-                Smart tracking solutions
-              </span>
-              <h2>
-                Eyes on the road.
-                <br />
-                Control in your hands.
-              </h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="tracking-section__lead">
-                Technology-enabled visibility for the vehicles and assets your operation depends
-                on. See more, understand more and make better-informed decisions.
-              </p>
-            </Reveal>
-
-            <div className="tracking-list">
-              {[
-                ['gps', 'GPS tracking', 'Location visibility for everyday fleet oversight.'],
-                ['camera', 'AI-powered dash cameras', 'In-vehicle camera technology on the road.'],
-                ['lock', 'Smart container locking', 'Technology-enabled security for container movements.'],
-                ['route', 'Fleet monitoring', 'Monitoring shaped around your operating needs.'],
-              ].map(([icon, title, description], index) => (
-                <Reveal className="tracking-list__item" key={title} delay={index * 80}>
-                  <span className="tracking-list__icon">
-                    <Icon name={icon as IconName} size={21} />
-                  </span>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <Link to="/services/tracking" className="button button--outline">
-              Explore smart tracking
-              <span className="button__icon">
-                <Icon name="arrowUp" size={18} />
-              </span>
-            </Link>
-          </div>
-
-          <Reveal className="tracking-board" delay={160}>
-            <div className="tracking-board__bar">
-              <span className="tracking-board__brand">
-                <img src="/media/brand/haly-mark-white.png" alt="" />
-                HALY / FLEET VIEW
-              </span>
-              <span className="tracking-board__status">
-                <span /> Illustrative
-              </span>
-            </div>
-            <div className="tracking-board__map">
-              <img
-                src="/media/services/tracking-map.webp"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <svg viewBox="0 0 600 520" fill="none" aria-hidden="true">
-                <path
-                  className="tracking-board__route"
-                  d="M74 421c57-53 101-44 145-104 42-58 31-103 90-139 57-35 108 1 157-49 26-27 42-51 58-79"
-                />
-              </svg>
-              <span className="map-marker map-marker--one">
-                <span className="map-marker__dot" />
-                <span className="map-marker__label">Vehicle</span>
-              </span>
-              <span className="map-marker map-marker--two">
-                <span className="map-marker__dot" />
-                <span className="map-marker__label">Container</span>
-              </span>
-              <span className="map-marker map-marker--three">
-                <span className="map-marker__dot" />
-                <span className="map-marker__label">Camera</span>
-              </span>
-            </div>
-            <div className="tracking-board__foot">
-              <span>
-                <Icon name="gps" size={16} /> Location
-              </span>
-              <span>
-                <Icon name="camera" size={16} /> Vision
-              </span>
-              <span>
-                <Icon name="lock" size={16} /> Security
-              </span>
-              <span className="tracking-board__note">Illustrative interface — not live data.</span>
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -486,7 +399,7 @@ export function Home() {
                 <Icon name="check" size={15} /> Same-day & scheduled deliveries
               </li>
               <li>
-                <Icon name="check" size={15} /> B2B & document movements
+                <Icon name="check" size={15} /> Document & parcel movements
               </li>
               <li>
                 <Icon name="check" size={15} /> Small commercial cargo
@@ -523,41 +436,20 @@ export function Home() {
             }
           />
 
-          <div className="industry-grid">
+          <ul className="serve-list">
             {industries.map((industry, index) => (
-              <Reveal as="article" className="industry-card" key={industry.title} delay={index * 50}>
-                <span className="industry-card__index">0{index + 1}</span>
-                <span className="industry-card__icon">
-                  <Icon name={industry.icon} size={24} />
-                </span>
-                <h3>{industry.title}</h3>
-                <p>{industry.description}</p>
+              <Reveal as="li" className="serve-list__item" key={industry.title} delay={index * 40}>
+                <Link to="/industries" className="serve-list__link">
+                  <span className="serve-list__number">0{index + 1}</span>
+                  <span className="serve-list__icon">
+                    <Icon name={industry.icon} size={19} />
+                  </span>
+                  <span className="serve-list__title">{industry.title}</span>
+                  <Icon name="arrowUp" size={16} />
+                </Link>
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--cream clients-section">
-        <div className="container">
-          <SectionHeader
-            kicker="Our clients"
-            title={
-              <>
-                In good
-                <br />
-                company.
-              </>
-            }
-            intro={
-              <p>
-                A selection of valued clients from Haly Group&apos;s existing portfolio — across
-                corporate, institutional, travel and logistics environments.
-              </p>
-            }
-            align="split"
-          />
-          <LogoWall />
+          </ul>
         </div>
       </section>
 

@@ -6,9 +6,7 @@ const variants: Record<string, ImageVariant[]> = {
   '/media/hero/hero-mobility.webp': [
     { width: 800, src: '/media/hero/hero-mobility-800.webp' },
     { width: 1200, src: '/media/hero/hero-mobility-1200.webp' },
-    { width: 1600, src: '/media/hero/hero-mobility-1600.webp' },
-    { width: 2000, src: '/media/hero/hero-mobility-2000.webp' },
-    { width: 2399, src: '/media/hero/hero-mobility.webp' },
+    { width: 1500, src: '/media/hero/hero-mobility.webp' },
   ],
   '/media/hero/hero-tanzania.webp': [
     { width: 800, src: '/media/hero/hero-tanzania-800.webp' },
@@ -19,8 +17,7 @@ const variants: Record<string, ImageVariant[]> = {
   '/media/hero/hero-city.webp': [
     { width: 800, src: '/media/hero/hero-city-800.webp' },
     { width: 1200, src: '/media/hero/hero-city-1200.webp' },
-    { width: 1587, src: '/media/hero/hero-city-1600.webp' },
-    { width: 2000, src: '/media/hero/hero-city.webp' },
+    { width: 1500, src: '/media/hero/hero-city.webp' },
   ],
   '/media/services/logistics-parcels.webp': [
     { width: 800, src: '/media/services/logistics-parcels-800.webp' },
@@ -28,8 +25,9 @@ const variants: Record<string, ImageVariant[]> = {
     { width: 1600, src: '/media/services/logistics-parcels.webp' },
   ],
   '/media/services/tracking-dashboard.webp': [
-    { width: 1000, src: '/media/services/tracking-dashboard-1000.webp' },
-    { width: 1600, src: '/media/services/tracking-dashboard.webp' },
+    { width: 800, src: '/media/services/tracking-dashboard-800.webp' },
+    { width: 1200, src: '/media/services/tracking-dashboard-1200.webp' },
+    { width: 1571, src: '/media/services/tracking-dashboard.webp' },
   ],
   '/media/services/travel-hotel.webp': [
     { width: 1000, src: '/media/services/travel-hotel-1000.webp' },

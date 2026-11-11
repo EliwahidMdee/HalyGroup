@@ -63,7 +63,7 @@ export function About() {
               <p className="about-story__lead">
                 Haly Group Limited is a diversified Tanzanian service company headquartered in
                 Dar es Salaam, providing integrated solutions across transportation, travel
-                management, smart mobility, and light cargo & courier services.
+                management, smart mobility, and light cargo & logistics services.
               </p>
             </Reveal>
             <Reveal delay={100}>
@@ -106,48 +106,6 @@ export function About() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="company-reel-section">
-        <div className="container company-reel__head">
-          <Reveal>
-            <span className="eyebrow eyebrow--light">
-              <span className="eyebrow__line" />
-              In motion
-            </span>
-            <h2>
-              A closer look
-              <br />
-              at how we move.
-            </h2>
-          </Reveal>
-          <Reveal delay={100}>
-            <p>
-              A glimpse of the vehicles and everyday operations behind Haly Group&apos;s mobility
-              services.
-            </p>
-          </Reveal>
-        </div>
-
-        <Reveal className="container company-reel">
-          <video
-            className="company-reel__video"
-            controls
-            playsInline
-            preload="none"
-            poster="/media/video/haly-fleet-poster.jpg"
-          >
-            <source src="/media/video/haly-fleet-reel.mp4" type="video/mp4" />
-            Your browser does not support embedded video. Please contact our team to learn more
-            about our fleet.
-          </video>
-          <div className="company-reel__caption">
-            <span>
-              <Icon name="play" size={16} /> Haly Group fleet footage
-            </span>
-            <span>Dar es Salaam · Tanzania</span>
-          </div>
-        </Reveal>
       </section>
 
       <section className="section section--cream purpose-section">

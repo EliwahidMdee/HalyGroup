@@ -1125,7 +1125,6 @@ section {
 /* ---------- About ---------- */
 .about-story__image,
 .company-reel__video,
-.service-gallery,
 .service-feature__media,
 .purpose-card,
 .contact-card {
@@ -1297,22 +1296,6 @@ section {
     background: rgba(255, 255, 255, 0.72);
     transform: translateY(-3px);
   }
-}
-
-.service-gallery {
-  gap: 0.6rem;
-  padding: 0.6rem;
-  background: var(--navy-ink);
-}
-
-.service-gallery__item,
-.service-gallery__item:last-child {
-  border: 0;
-  border-radius: 16px;
-}
-
-.service-gallery__item figcaption {
-  background: linear-gradient(0deg, rgba(5, 12, 25, 0.84), transparent);
 }
 
 .service-feature__media {
