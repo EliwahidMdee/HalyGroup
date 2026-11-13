@@ -124,7 +124,11 @@ export function ServiceDetail() {
           className={`section service-feature service-feature--${service.feature.theme}`}
         >
           <div className="container service-feature__grid">
-            <Reveal className="service-feature__media">
+            <Reveal
+              className={`service-feature__media${
+                service.feature.mediaAspect === 'wide' ? ' service-feature__media--wide' : ''
+              }`}
+            >
               <img
                 src={service.feature.image}
                 srcSet={getImageSrcSet(service.feature.image)}

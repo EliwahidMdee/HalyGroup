@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CTASection } from '../components/CTASection'
 import { Icon } from '../components/Icon'
-import { Marquee } from '../components/Marquee'
 import { ProcessSection } from '../components/ProcessSection'
 import { Reveal } from '../components/Reveal'
 import { SectionHeader } from '../components/SectionHeader'
@@ -12,19 +11,19 @@ import { getImageSrcSet } from '../lib/images'
 
 const fleet = [
   {
-    image: '/media/fleet/fleet-6.webp',
+    image: '/media/fleet/toyota-prado.webp',
     title: 'Executive & corporate',
     description: 'Comfortable vehicle options for meetings, airport runs and executive schedules.',
     tag: 'Chauffeur-driven',
   },
   {
-    image: '/media/fleet/alphard-no-bg.webp',
+    image: '/media/fleet/toyota-alphard.webp',
     title: 'Self-drive & flexible',
     description: 'Flexible rental arrangements for business travel, personal trips and daily needs.',
     tag: 'Self-drive',
   },
   {
-    image: '/media/fleet/coaster-white-bg.webp',
+    image: '/media/fleet/toyota-coaster.webp',
     title: 'Group & staff movement',
     description: 'Coordinated vehicle options for teams, visitors and group itineraries.',
     tag: 'Group mobility',
@@ -244,51 +243,6 @@ export function Home() {
           </div>
         </div>
       </section>
-
-      <section className="section section--white services-home" id="services">
-        <div className="container">
-          <SectionHeader
-            kicker="What we do"
-            title={
-              <>
-                Four service lines.
-                <br />
-                One standard.
-              </>
-            }
-            intro={
-              <p>
-                Choose the service you need — or bring us a requirement that crosses more than
-                one. Our teams work together so the experience feels seamless.
-              </p>
-            }
-            action={
-              <Link to="/services" className="text-link">
-                All services <Icon name="arrow" size={17} />
-              </Link>
-            }
-          />
-
-          <div className="service-index">
-            {services.map((service, index) => (
-              <Reveal className="service-index__row" key={service.slug} delay={index * 60}>
-                <Link to={`/services/${service.slug}`} className="service-index__link">
-                  <span className="service-index__number">0{index + 1}</span>
-                  <span className="service-index__body">
-                    <span className="service-index__title">{service.title}</span>
-                    <span className="service-index__summary">{service.summary}</span>
-                  </span>
-                  <span className="service-index__arrow">
-                    <Icon name="arrowUp" size={18} />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Marquee />
 
       <ProcessSection />
 

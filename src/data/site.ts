@@ -51,6 +51,7 @@ export type Service = {
     image: string
     imageAlt: string
     theme: 'dark' | 'light' | 'cream'
+    mediaAspect?: 'portrait' | 'wide'
   }
 }
 
@@ -131,7 +132,7 @@ export const services: Service[] = [
       body: 'From a single airport transfer to ongoing corporate mobility, we coordinate the details around your schedule. Choose a chauffeur-driven arrangement or a self-drive rental, and we will help shape the rest.',
       points: ['Airport & hotel transfers', 'Self-drive options', 'Corporate staff transportation'],
       image: '/media/services/transport-selfdrive.webp',
-      imageAlt: 'Self-drive rental vehicle from Haly Group',
+      imageAlt: 'Haly Group vehicle prepared for a corporate transfer',
       theme: 'light',
     },
   },
@@ -143,8 +144,8 @@ export const services: Service[] = [
     summary: 'Travel planning and management built around convenience, compliance and cost efficiency.',
     description:
       'Haly Group Limited provides comprehensive travel planning and management designed around convenience, compliance and cost efficiency. From flights and accommodation to documentation and ground arrangements, we help individuals and organisations travel with greater ease.',
-    image: '/media/services/travel-planning.webp',
-    heroImage: '/media/services/transport-airport.webp',
+    image: '/media/services/travel-agency.webp',
+    heroImage: '/media/services/travel-agency.webp',
     imageAlt: 'Travel planning and airport transfer services',
     offerings: [
       {
@@ -202,9 +203,9 @@ export const services: Service[] = [
     summary: 'Technology-enabled visibility, security and control for your fleet.',
     description:
       'Our smart tracking solutions are designed to improve fleet visibility, security and operational control. Technology-enabled services help organisations see more of their operations and make better-informed decisions about the movement of their vehicles and assets.',
-    image: '/media/services/tracking-gps.webp',
-    heroImage: '/media/services/tracking-gps.webp',
-    imageAlt: 'Smart GPS tracking service from Haly Group',
+    image: '/media/services/tracking-illustration.webp',
+    heroImage: '/media/services/tracking-illustration.webp',
+    imageAlt: 'Illustrative fleet tracking dashboard showing vehicle locations and status',
     offerings: [
       {
         title: 'GPS Tracking',
@@ -235,9 +236,10 @@ export const services: Service[] = [
       kicker: 'Operational clarity',
       title: 'See more. React sooner. Operate better.',
       body: 'Tracking is more than a dot on a map. It is the ability to understand where assets are, how they are being used and where attention may be needed. Our solutions bring location, camera and container technologies into a clearer operational picture.',
-      image: '/media/services/tracking-dashboard.webp',
-      imageAlt: 'Vehicle dashboard and navigation technology',
+      image: '/media/services/tracking-feature.webp',
+      imageAlt: 'Fleet tracking technology from Haly Group',
       theme: 'cream',
+      mediaAspect: 'wide',
     },
   },
   {
@@ -280,8 +282,8 @@ export const services: Service[] = [
       title: 'Cargo, handled end to end.',
       body: 'Every load carries something that matters. Our light cargo and logistics service brings coordination, flexibility and care to the movement of commercial goods across urban and intercity routes.',
       points: ['Same-day & scheduled options', 'Small commercial cargo', 'Urban & intercity routes'],
-      image: '/media/services/logistics-cargo.webp',
-      imageAlt: 'Cargo truck used for light commercial cargo movement',
+      image: '/media/services/logistics-cargo-care.webp',
+      imageAlt: 'Cargo being prepared for a light commercial shipment',
       theme: 'light',
     },
   },
