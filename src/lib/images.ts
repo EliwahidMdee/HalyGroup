@@ -32,10 +32,6 @@ const variants: Record<string, ImageVariant[]> = {
     { width: 800, src: '/media/services/logistics-cargo-care-800.webp' },
     { width: 1200, src: '/media/services/logistics-cargo-care.webp' },
   ],
-  '/media/services/travel-hotel.webp': [
-    { width: 1000, src: '/media/services/travel-hotel-1000.webp' },
-    { width: 1600, src: '/media/services/travel-hotel.webp' },
-  ],
   '/media/services/tracking-illustration.webp': [
     { width: 800, src: '/media/services/tracking-illustration-800.webp' },
     { width: 1600, src: '/media/services/tracking-illustration.webp' },
@@ -58,10 +54,6 @@ const variants: Record<string, ImageVariant[]> = {
   '/media/services/transport-parking.webp': [
     { width: 800, src: '/media/services/transport-parking-800.webp' },
     { width: 1200, src: '/media/services/transport-parking.webp' },
-  ],
-  '/media/services/transport-selfdrive.webp': [
-    { width: 1000, src: '/media/services/transport-selfdrive-1000.webp' },
-    { width: 1200, src: '/media/services/transport-selfdrive.webp' },
   ],
   '/media/services/transport-staff.webp': [
     { width: 600, src: '/media/services/transport-staff-600.webp' },
