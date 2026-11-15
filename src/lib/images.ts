@@ -51,6 +51,14 @@ const variants: Record<string, ImageVariant[]> = {
     { width: 800, src: '/media/services/travel-agency-800.webp' },
     { width: 1400, src: '/media/services/travel-agency.webp' },
   ],
+  '/media/services/coaster-branded.webp': [
+    { width: 800, src: '/media/services/coaster-branded-800.webp' },
+    { width: 1400, src: '/media/services/coaster-branded.webp' },
+  ],
+  '/media/services/transport-parking.webp': [
+    { width: 800, src: '/media/services/transport-parking-800.webp' },
+    { width: 1200, src: '/media/services/transport-parking.webp' },
+  ],
   '/media/services/transport-selfdrive.webp': [
     { width: 1000, src: '/media/services/transport-selfdrive-1000.webp' },
     { width: 1200, src: '/media/services/transport-selfdrive.webp' },

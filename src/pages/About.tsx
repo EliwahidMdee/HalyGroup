@@ -7,6 +7,7 @@ import { Reveal } from '../components/Reveal'
 import { SectionHeader } from '../components/SectionHeader'
 import { differentiators, values } from '../data/site'
 import { usePageMeta } from '../hooks/usePageMeta'
+import { getImageSrcSet } from '../lib/images'
 
 export function About() {
   usePageMeta(
@@ -83,8 +84,10 @@ export function About() {
             <div className="about-story__images">
               <Reveal as="figure" className="about-story__image about-story__image--large">
                 <img
-                  src="/media/services/transport-staff.webp"
-                  alt="Corporate staff transportation service"
+                  src="/media/services/coaster-branded.webp"
+                  srcSet={getImageSrcSet('/media/services/coaster-branded.webp')}
+                  sizes="(max-width: 900px) 100vw, 40vw"
+                  alt="Haly Group branded Coaster bus for group transport"
                   loading="lazy"
                   decoding="async"
                 />
